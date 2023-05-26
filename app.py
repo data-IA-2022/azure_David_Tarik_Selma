@@ -24,8 +24,6 @@ secret_name = "DATABASE-URL2"  # Replace with the name of your secret in Key Vau
 secret_value = secret_client.get_secret(secret_name).value
 secret_value = secret_value.replace('\\','')
 engine = create_engine(secret_value )
-print(secret_value)
-print(engine)
 
 bootstrap = Bootstrap(app)
 @app.route('/')
