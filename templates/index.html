@@ -5,9 +5,17 @@
 {% block content %}
 
 <div>
-    <h2 class="font-weight-normal text-center"><strong>Votre résultat:</strong> {{ prediction }} pour la sélection suivante:</h2>
-    <div class="table row justify-content-center">{{ table_html|safe }}</div>
-    </div>
+    <h2 class="font-weight-normal text-center"><strong>Votre résultat:</strong> pour la sélection suivante:</h2>
 
+    <form method="GET" action="{{ url_for('index') }}" class="text-center mb-4">
+        <label for="dept_number">Enter department number:</label>
+        <input type="text" id="dept_number" name="dept_number" class="form-control" required>
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+    </form>
+
+    <div class="table row justify-content-center">
+        {{ table_html|safe }}
+    </div>
+</div>
 
 {% endblock %}
