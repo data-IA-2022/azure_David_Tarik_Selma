@@ -2,10 +2,12 @@ import pandas as pd
 from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
 from os.path import join, dirname
+from dotenv import load_dotenv
 from os import getenv
 from sqlalchemy import create_engine
 
 
+load_dotenv()  # Load environment variables from .env file
 
 # Retrieve the database URL from the environment variables
 database_url = getenv('DATABASE_URL')
